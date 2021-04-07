@@ -3,64 +3,74 @@ function initVue(){
  new Vue({
    el: '#app',
    data : {
-     'img': './img/Tokyo.jfif'
+     'imagines': ['./img/Tokyo.jfif', './img/Roma.jpg', './img/Russia.jpg' ],
+     'index': 0
 
    },
    methods:{
     left : function(){
-      if(this.img ==  './img/Tokyo.jfif' ){
-        this.img = './img/Roma.jpg'
-      }
-      else if (this.img == './img/Roma.jpg' ) {
-        this.img = './img/Russia.jpg'
+     this.index--;
+     if (this.index < 0){
+       this.index= this.imagines.length - 1
+     }
 
-      }else if (this.img == './img/Russia.jpg') {
-        this.img = './img/Tokyo.jfif'
-      }
 
     },
 
     right : function(){
-      if(this.img ==  './img/Tokyo.jfif' ){
-        this.img = './img/Roma.jpg'
+      this.index++;           // 2
+      if (this.index > this.imagines.length -1){
+         this.index= 0;
+
       }
-      else if (this.img == './img/Roma.jpg' ) {
-        this.img = './img/Russia.jpg'
-
-      }else if (this.img == './img/Russia.jpg') {
-        this.img = './img/Tokyo.jfif'
-      }
-
-
     }
    }
 
   });
 }
 
+
+
 // function initVue(){
 //  new Vue({
 //    el: '#app',
 //    data : {
-//     0: './img/Tokyo.jfif',
-//     1: './img/Russia.jpg',
-//     2: './img/Roma.jpg',
-//      'counter': 0,
+//      'img': './img/Tokyo.jfif'
+//
 //    },
-//
 //    methods:{
-//      left : function(){
-//       if (this.counter == 0){
-//         this.counter++;
+//     left : function(){
+//       if(this.img ==  './img/Tokyo.jfif' ){
+//         this.img = './img/Roma.jpg'
+//       }
+//       else if (this.img == './img/Roma.jpg' ) {
+//         this.img = './img/Russia.jpg'
 //
+//       }else if (this.img == './img/Russia.jpg') {
+//         this.img = './img/Tokyo.jfif'
 //       }
 //
-//      }
+//     },
 //
+//     right : function(){
+//       if(this.img ==  './img/Tokyo.jfif' ){
+//         this.img = './img/Roma.jpg'
+//       }
+//       else if (this.img == './img/Roma.jpg' ) {
+//         this.img = './img/Russia.jpg'
+//
+//       }else if (this.img == './img/Russia.jpg') {
+//         this.img = './img/Tokyo.jfif'
+//       }
+//
+//
+//     }
 //    }
 //
 //   });
 // }
+
+
 
 function init(){
   initVue();
