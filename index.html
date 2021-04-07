@@ -15,9 +15,18 @@
     <body>
       <div id="app" class="container">
         <i class="fas fa-arrow-left" @click='left'></i>
-        <img src="img/Roma.jpg" alt="foto" width="500px">
+        <img v-bind:src="img" alt="foto" width="500px">
+
         <i class="fas fa-arrow-right" @click='right'></i>
 
       </div>
+
+      <!-- <div id="app" class="container">
+        <i class="fas fa-arrow-left" @click='left'></i>
+        <img v-bind:src="counter" alt="foto" width="500px">
+
+         <i class="fas fa-arrow-right" @click='right'></i>
+
+      </div> -->
     </body>
 </html>
